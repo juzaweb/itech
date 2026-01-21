@@ -1,6 +1,7 @@
 {
     "name": "juzaweb/admin",
-    "description": "Juzaweb CMS Admin",
+    "type": "juzaweb-theme",
+    "description": "Juzaweb CMS theme Itech",
     "keywords": [],
     "license": "MIT",
     "homepage": "https://juzaweb.com",
@@ -9,8 +10,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Juzaweb\\Modules\\Admin\\": "src/",
-            "Juzaweb\\Modules\\Admin\\Database\\Factories\\": "database/factories/"
+            "Juzaweb\\Themes\\Itech\\": "src/",
+            "Juzaweb\\Themes\\Itech\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "minimum-stability": "dev",
