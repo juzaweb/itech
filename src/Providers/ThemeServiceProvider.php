@@ -122,13 +122,13 @@ class ThemeServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/itech.php',
+            __DIR__ . '/../../config/itech.php',
             'itech'
         );
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'itech');
 
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'itech');
     }
