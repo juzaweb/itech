@@ -11,7 +11,8 @@ mix.options({
     terser: {extractComments: false}
 });
 
-const publishPath = 'themes/itech/assets/public';
+const basePath = path.relative(process.cwd(), __dirname);
+const publishPath = basePath + '/public';
 mix.setPublicPath(publishPath);
 
 mix.combine([
