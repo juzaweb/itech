@@ -1,4 +1,6 @@
 let mix = require('laravel-mix');
+let path = require('path');
+
 require('laravel-mix-merge-manifest');
 
 mix.disableNotifications();
@@ -16,37 +18,37 @@ const publishPath = basePath + '/public';
 mix.setPublicPath(publishPath);
 
 mix.combine([
-    'themes/itech/assets/js/owlcarousel2.min.js',
-    'themes/itech/assets/js/sticky-sidebar.min.js',
-    'themes/itech/assets/js/jquery-replacetext.min.js',
-    'themes/itech/assets/js/toc.min.js',
+    basePath + '/js/owlcarousel2.min.js',
+    basePath + '/js/sticky-sidebar.min.js',
+    basePath + '/js/jquery-replacetext.min.js',
+    basePath + '/js/toc.min.js',
 ], publishPath + '/js/vendor.min.js');
 
 mix.combine(
     [
-        'themes/itech/assets/js/main.js',
-        'themes/itech/assets/js/load-more.js',
-        'themes/itech/assets/js/comments.js',
+        basePath + '/js/main.js',
+        basePath + '/js/load-more.js',
+        basePath + '/js/comments.js',
     ],
     publishPath + '/js/main.min.js'
 );
 
 mix.styles(
-    ['themes/itech/assets/css/google-fonts.css'],
+    [basePath + '/css/google-fonts.css'],
     publishPath + '/css/google-fonts.min.css'
 );
 
 mix.styles(
     [
-        'themes/itech/assets/css/main.css',
-        'themes/itech/assets/css/custom.css',
+        basePath + '/css/main.css',
+        basePath + '/css/custom.css',
     ],
     publishPath + '/css/main.min.css'
 );
 
 mix.styles(
     [
-        'themes/itech/assets/css/auth.css',
+        basePath + '/css/auth.css',
     ],
     publishPath + '/css/auth.min.css'
 );
