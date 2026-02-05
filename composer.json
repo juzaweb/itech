@@ -6,7 +6,9 @@
     "license": "MIT",
     "homepage": "https://juzaweb.com",
     "require": {
-        "php": "^8.2"
+        "php": "^8.2",
+        "juzaweb/core": "dev-master",
+        "juzaweb/blog": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -19,7 +21,6 @@
         "sort-packages": true
     },
     "require-dev": {
-        "juzaweb/core": "dev-master",
         "orchestra/testbench": "^9.0",
         "phpunit/phpunit": "^11.0"
     },
