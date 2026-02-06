@@ -21,7 +21,7 @@ Route::get('/load-posts', [HomeController::class, 'loadPosts'])->name('home.load
 // Route::get('page-{page?}.html', [HomeController::class, 'index'])
 //     ->where('page', '[0-9]+');
 Route::get('/post/{slug}', [BlogController::class, 'show'])->name('post.show');
-Route::post('/post/{slug}', [BlogController::class, 'comment'])->name('post.comment');
+Route::post('/post/{slug}', [BlogController::class, 'comment'])->name('post.comment')->middleware('throttle:6,1');
 
 Route::get('/post/category/{slug}', [BlogController::class, 'category'])->name('blog.category');
 
