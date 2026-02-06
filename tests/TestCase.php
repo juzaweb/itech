@@ -25,6 +25,13 @@ abstract class TestCase extends OrchestraTestCase
             );
         }
 
+        if (!class_exists('Juzaweb\Modules\Admin\Models\Guest')) {
+            class_alias(
+                'Juzaweb\Modules\Core\Models\Guest',
+                'Juzaweb\Modules\Admin\Models\Guest'
+            );
+        }
+
         // Load and alias UserFactory
         $factoryPath = __DIR__ . '/../vendor/juzaweb/core/database/factories/UserFactory.php';
         if (file_exists($factoryPath)) {
@@ -92,11 +99,15 @@ abstract class TestCase extends OrchestraTestCase
 
         // App key
         $app['config']->set('app.key', 'base64:2fl+Ktvkfl+Fuz4Qp/yWci8eZ2y9Gk4W/q3y9Gk4W/s=');
+
+        $app['config']->set('translatable.locales', ['en']);
+        $app['config']->set('translatable.fallback_locale', 'en');
     }
 
     protected function defineDatabaseMigrations()
     {
         $this->loadLaravelMigrations();
         $this->loadMigrationsFrom(__DIR__ . '/../vendor/juzaweb/core/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../vendor/juzaweb/blog/database/migrations');
     }
 }
