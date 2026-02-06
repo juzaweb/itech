@@ -6,7 +6,7 @@
         <span class="comment-date">{{ $comment->created_at->diffForHumans() }}</span>
     </div>
     <div class="comment-body">
-        {{ $comment->content }}
+        {!! nl2br(e($comment->content)) !!}
     </div>
 
     @foreach($comment->children as $childComment)
@@ -18,7 +18,7 @@
                     <span class="comment-date">{{ $childComment->created_at->diffForHumans() }}</span>
                 </div>
                 <div class="comment-body">
-                    {{ $childComment->content }}
+                    {!! nl2br(e($childComment->content)) !!}
                 </div>
             </div>
         </div>
