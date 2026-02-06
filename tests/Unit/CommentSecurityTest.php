@@ -1,6 +1,6 @@
 <?php
 
-namespace Juzaweb\Themes\Itech\Tests\Feature;
+namespace Juzaweb\Themes\Itech\Tests\Unit;
 
 use Juzaweb\Themes\Itech\Tests\TestCase;
 use Illuminate\Support\Facades\View;
