@@ -13,6 +13,14 @@ abstract class TestCase extends OrchestraTestCase
         $this->setUpAliases();
         parent::setUp();
         $this->createMixManifest();
+
+        \Juzaweb\Modules\Core\Translations\Models\Language::updateOrCreate(
+            ['code' => 'en'],
+            [
+                'name' => 'English',
+                'default' => true,
+            ]
+        );
     }
 
     protected function setUpAliases()
@@ -22,6 +30,13 @@ abstract class TestCase extends OrchestraTestCase
             class_alias(
                 'Juzaweb\Modules\Core\Models\User',
                 'Juzaweb\Modules\Admin\Models\User'
+            );
+        }
+
+        if (!class_exists('Juzaweb\Modules\Admin\Models\Guest')) {
+            class_alias(
+                'Juzaweb\Modules\Core\Models\Guest',
+                'Juzaweb\Modules\Admin\Models\Guest'
             );
         }
 
@@ -47,6 +62,14 @@ abstract class TestCase extends OrchestraTestCase
         if (!file_exists($path . '/mix-manifest.json')) {
             file_put_contents($path . '/mix-manifest.json', '{}');
         }
+
+        $path = public_path('themes/itech');
+        if (!is_dir($path)) {
+            mkdir($path, 0777, true);
+        }
+        if (!file_exists($path . '/mix-manifest.json')) {
+            file_put_contents($path . '/mix-manifest.json', '{}');
+        }
     }
 
     protected function getPackageProviders($app)
@@ -56,6 +79,7 @@ abstract class TestCase extends OrchestraTestCase
             \Juzaweb\QueryCache\QueryCacheServiceProvider::class,
             CoreServiceProvider::class,
             ThemeServiceProvider::class,
+            \Juzaweb\Modules\Blog\Providers\BlogServiceProvider::class,
         ];
     }
 
@@ -92,11 +116,20 @@ abstract class TestCase extends OrchestraTestCase
 
         // App key
         $app['config']->set('app.key', 'base64:2fl+Ktvkfl+Fuz4Qp/yWci8eZ2y9Gk4W/q3y9Gk4W/s=');
+
+        $app['config']->set('auth.guards.member', [
+            'driver' => 'session',
+            'provider' => 'users',
+        ]);
+
+        $app['config']->set('translatable.fallback_locale', 'en');
+        $app['config']->set('translatable.locales', ['en']);
     }
 
     protected function defineDatabaseMigrations()
     {
         $this->loadLaravelMigrations();
         $this->loadMigrationsFrom(__DIR__ . '/../vendor/juzaweb/core/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../vendor/juzaweb/blog/database/migrations');
     }
 }
