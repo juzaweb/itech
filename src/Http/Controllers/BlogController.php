@@ -21,7 +21,10 @@ class BlogController extends ThemeController
     {
         $post = Post::whereFrontend(translationCacheTags: ['post_translations', 'post_translations:' . $slug])
             ->cacheTags(['posts', "posts:{$slug}"])
-            ->with(['categories' => fn ($q) => $q->with(['children'])->whereRoot()->whereFrontend()])
+            ->with([
+                'categories' => fn ($q) => $q->with(['children'])->whereRoot()->whereFrontend(),
+                'tags' => fn ($q) => $q->cacheTags(['posts', "posts:{$slug}"])->cacheFor(3600)
+            ])
             ->whereTranslation('slug', $slug)
             ->firstOrFail();
 
