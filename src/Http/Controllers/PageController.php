@@ -23,7 +23,7 @@ class PageController extends ThemeController
             ->firstOrFail();
 
         return view(
-            'itech::page.show',
+            page_view_name($page, 'itech'),
             [
                 ...compact('page'),
                 'title' => $page->title,
