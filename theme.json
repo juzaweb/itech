@@ -9,6 +9,6 @@
     ],
     "require": [
         "Blog",
-        "AdsManager"
+        "AdManagement"
     ]
 }
