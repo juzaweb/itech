@@ -9,7 +9,7 @@ Whether you are launching a tech news portal, a gadget review site, or a niche s
 ## Requirements
 
 *   **PHP** ^8.2
-*   **Juzaweb CMS**: Core (dev-master)
+*   **Juzaweb CMS**: Core (^5.0)
 *   **Plugins**:
     *   `juzaweb/blog` (dev-master)
     *   `juzaweb/ads-manager` (dev-master)
