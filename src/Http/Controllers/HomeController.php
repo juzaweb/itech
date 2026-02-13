@@ -91,7 +91,7 @@ class HomeController extends ThemeController
         }
 
         $posts = Post::whereFrontend()
-            ->with(['category' => fn ($q) => $q->whereFrontend(), 'creator'])
+            ->with(['categories' => fn ($q) => $q->whereFrontend(), 'creator'])
             ->when(
                 $exclude,
                 fn ($query) => $query->whereNotIn('id', explode(',', $exclude))
@@ -127,7 +127,7 @@ class HomeController extends ThemeController
                     'thumbnail' => proxy_image($post->thumbnail),
                     'date' => $post->created_at->format('F d, Y'),
                     'description' => seo_string($post->content, 100),
-                    'category' => ($category = $post->category->first()) ? [
+                    'category' => ($category = $post->categories->first()) ? [
                         'id' => $category->id,
                         'name' => $category->name,
                     ] : null,

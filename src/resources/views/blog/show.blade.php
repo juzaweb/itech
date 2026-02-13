@@ -89,7 +89,7 @@
                                             <h3>{{ __('You may like these posts') }}</h3>
                                         </div>
                                         <div class='related-ready'>
-                                            <div class='related-tag' data-label='{{ $post->category->first()?->id }}' data-current-id="{{ $post->id }}"></div>
+                                            <div class='related-tag' data-label='{{ $post->categories->first()?->id }}' data-current-id="{{ $post->id }}"></div>
                                         </div>
                                     </div>
                                 </div>
