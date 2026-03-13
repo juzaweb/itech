@@ -19,6 +19,7 @@ class PostShowPerformanceTest extends TestCase
             CoreServiceProvider::class,
             ThemeServiceProvider::class,
             BlogServiceProvider::class,
+            \Webwizo\Shortcodes\ShortcodesServiceProvider::class,
         ];
     }
 
