@@ -33,12 +33,12 @@
                         </p>
                     </div>
 
-                    <form action="{{ route('login') }}" class="form-ajax" method="post" data-notify="false" data-jw-token="true">
+                    <x-form action="{{ route('login') }}" method="post" :notify="false" :token="true">
 
                         <div style="margin-bottom: 15px;">
                             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">{{ __('itech::translation.re_send_email') }}</button>
                         </div>
-                    </form>
+                    </x-form>
 
                     <div class="text-center" style="margin-top: 20px;">
                         <a href="{{ route('login') }}" style="font-weight: bold; font-size: 14px;">{{ __('itech::translation.login_to_account') }}</a>

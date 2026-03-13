@@ -38,8 +38,9 @@
                         @endforeach
                     @endif
 
-                    <form method="post" action="{{ route('login') }}" class="form-ajax" data-notify="false"
-                          data-jw-token="true">
+
+
+<x-form method="post" action="{{ route('login') }}" :notify="false" :token="true">
                         @csrf
 
                         <!-- Input Group -->
@@ -77,7 +78,7 @@
                             <button type="submit" class="btn btn-primary"
                                     style="width: 100%; padding: 10px;">{{ __('itech::translation.sign_in') }}</button>
                         </div>
-                    </form>
+                    </x-form>
 
                     <div class="text-center" style="margin-top: 20px;">
                         <span style="color: #666; font-size: 14px;">{{ __('itech::translation.do_not_have_an_account') }}</span>
