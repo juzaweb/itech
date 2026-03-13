@@ -33,7 +33,7 @@
                         </p>
                     </div>
 
-                    <x-form action="{{ route('login') }}" method="post" :notify="false" :token="true">
+                    <x-form action="{{ route('login') }}" method="post">
 
                         <div style="margin-bottom: 15px;">
                             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">{{ __('itech::translation.re_send_email') }}</button>

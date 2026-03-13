@@ -27,7 +27,7 @@
                     </div>
                     <!-- End Title -->
 
-                        <x-form method="post" action="{{ route('register') }}" :notify="false" :token="true">
+                        <x-form method="post" action="{{ route('register') }}">
                             <!-- Input Group -->
                             <div class="form-group" style="margin-bottom: 20px;">
                                 <label for="registerName">{{ __('itech::translation.name') }}</label>

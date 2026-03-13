@@ -40,7 +40,7 @@
 
 
 
-<x-form method="post" action="{{ route('login') }}" :notify="false" :token="true">
+<x-form method="post" action="{{ route('login') }}">
                         @csrf
 
                         <!-- Input Group -->

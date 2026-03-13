@@ -29,7 +29,7 @@
 
 
 
-                        <x-form action="{{ route('password.reset', [$email, $token]) }}" method="post" :notify="false" :token="true">
+                        <x-form action="{{ route('password.reset', [$email, $token]) }}" method="post">
                             <!-- Input Group -->
                             <div class="form-group" style="margin-bottom: 20px;">
                                 <label for="newPassword">{{ __('itech::translation.new_password') }}</label>

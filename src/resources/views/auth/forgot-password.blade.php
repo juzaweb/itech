@@ -27,7 +27,7 @@
                     </div>
                     <!-- End Title -->
 
-                        <x-form method="post" action="{{ route('forgot-password') }}" :notify="false" :token="true">
+                        <x-form method="post" action="{{ route('forgot-password') }}">
 
                             <!-- Input Group -->
                             <div class="form-group" style="margin-bottom: 20px;">
