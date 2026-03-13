@@ -80,6 +80,7 @@ abstract class TestCase extends OrchestraTestCase
             CoreServiceProvider::class,
             ThemeServiceProvider::class,
             \Juzaweb\Modules\Blog\Providers\BlogServiceProvider::class,
+            \Webwizo\Shortcodes\ShortcodesServiceProvider::class,
         ];
     }
 
@@ -98,6 +99,7 @@ abstract class TestCase extends OrchestraTestCase
             'Menu' => \Juzaweb\Modules\Core\Facades\Menu::class,
             'NavMenu' => \Juzaweb\Modules\Core\Facades\NavMenu::class,
             'Thumbnail' => \Juzaweb\Modules\Core\Facades\Thumbnail::class,
+            'Shortcode' => \Webwizo\Shortcodes\Facades\Shortcode::class,
         ];
     }
 

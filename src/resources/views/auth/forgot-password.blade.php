@@ -27,7 +27,7 @@
                     </div>
                     <!-- End Title -->
 
-                        <form method="post" action="{{ route('forgot-password') }}" class="form-ajax" data-notify="false" data-jw-token="true">
+                        <x-form method="post" action="{{ route('forgot-password') }}">
 
                             <!-- Input Group -->
                             <div class="form-group" style="margin-bottom: 20px;">
@@ -43,7 +43,7 @@
                                     {{ __('itech::translation.recover_password') }}
                                 </button>
                             </div>
-                        </form>
+                        </x-form>
 
                         <div class="text-center" style="margin-top: 20px;">
                             <span style="color: #666; font-size: 14px;">{{ __('itech::translation.remember_your_password') }}</span>

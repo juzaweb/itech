@@ -29,7 +29,7 @@
 
 
 
-                        <form action="{{ route('password.reset', [$email, $token]) }}" class="form-ajax" method="post" data-notify="false" data-jw-token="true">
+                        <x-form action="{{ route('password.reset', [$email, $token]) }}" method="post">
                             <!-- Input Group -->
                             <div class="form-group" style="margin-bottom: 20px;">
                                 <label for="newPassword">{{ __('itech::translation.new_password') }}</label>
@@ -48,7 +48,7 @@
 
                             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">{{ __('itech::translation.reset_password') }}</button>
 
-                        </form>
+                        </x-form>
 
                         <div class="text-center" style="margin-top: 20px;">
                             <span style="color: #666; font-size: 14px;">{{ __('itech::translation.remember_your_password') }}</span>

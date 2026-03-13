@@ -27,7 +27,7 @@
                     </div>
                     <!-- End Title -->
 
-                        <form method="post" action="{{ route('register') }}" class="form-ajax" data-notify="false" data-jw-token="true">
+                        <x-form method="post" action="{{ route('register') }}">
                             <!-- Input Group -->
                             <div class="form-group" style="margin-bottom: 20px;">
                                 <label for="registerName">{{ __('itech::translation.name') }}</label>
@@ -68,7 +68,7 @@
                             <div style="margin-bottom: 15px;">
                                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">{{ __('itech::translation.sign_up') }}</button>
                             </div>
-                        </form>
+                        </x-form>
 
                         <div class="text-center" style="margin-top: 20px;">
                             <span style="color: #666; font-size: 14px;">{{ __('itech::translation.already_have_an_account') }}</span>
